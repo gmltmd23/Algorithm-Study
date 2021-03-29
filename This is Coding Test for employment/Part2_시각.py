@@ -1,3 +1,9 @@
+"""
+Part2 구현
+
+시각
+"""
+
 n = int(input())
 
 answer = 0
