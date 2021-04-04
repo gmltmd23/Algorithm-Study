@@ -3,8 +3,8 @@ import time
 
 def make_random_list():
     arr = []
-    for i in range(3000):
-        arr.append(randint(1, 3000))
+    for i in range(100):
+        arr.append(randint(1, 100))
     return arr
 
 def selection_sort():
@@ -75,17 +75,12 @@ def quick_sort(arr):
 
     return quick_sort(left_side) + [arr[pivot]] + quick_sort(right_side)
 
-def heap_sort():
-    pass
+def count_sort(arr):
+    counter = [0 for _ in range(max(arr) + 1)]
+    for value in arr:
+        counter[value] += 1
 
-
-selection_sort()
-insertion_sort()
-bubble_sort()
-
-arr = make_random_list()
-start = time.time()
-print(quick_sort(arr))
-end = time.time()
-
-print(f'퀵정렬 시간 : {end - start}')
+    for k in range(len(counter)):
+        if counter[k] != 0:
+            for j in range(counter[k]):
+                print(k, end = ', ')
