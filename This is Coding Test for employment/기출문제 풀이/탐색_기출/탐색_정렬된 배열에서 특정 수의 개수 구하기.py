@@ -1,3 +1,11 @@
+"""
+
+이진탐색, 전역변수 count 그리고 재귀함수로 풀어봤다.
+전역변수 count를 없애는 코드를 짜봐야겠다.
+
+
+"""
+
 import sys
 sys.setrecursionlimit(10 ** 6)
 input = sys.stdin.readline
