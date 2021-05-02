@@ -16,7 +16,7 @@ for i in range(n):
     while next < n:
         temp[next] += temp[now]
         next_time = next + time[next]
-        if next_time >= n:
+        if next_time > n:
             next = next_time
             continue
         max_pay = max(max_pay, temp[next])
