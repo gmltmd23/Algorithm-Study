@@ -1,3 +1,12 @@
+/*
+*
+* 백준 16953번 A -> B
+*
+* A 숫자를 2가지 연산을 써서 B 숫자로 만드는 문제이다.
+* 그런데 A를 B로 만드는것보다 B를 A로 만드는 아이디어를 떠올리면 풀 수 있는 문제이다.
+*
+* */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
