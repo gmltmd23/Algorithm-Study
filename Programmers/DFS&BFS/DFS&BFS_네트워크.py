@@ -28,5 +28,5 @@ def solution(n, computers):
     return answer
 
 n = 3
-c = [[1, 1, 0], [1, 1, 1], [0, 1, 1]]
+c = [[1, 1, 0], [1, 1, 0], [0, 1, 1]]
 print(solution(n, c))
