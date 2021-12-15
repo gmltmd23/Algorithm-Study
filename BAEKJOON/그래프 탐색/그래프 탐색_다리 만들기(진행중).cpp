@@ -12,12 +12,19 @@
 대륙별 구분법은 그냥 bfs를 돌리면 쉽다. 번호를 매겨두던가 하자.
 오늘은 대륙별 구분까지만 해놓았다.
 
-중요한것은 다리 연결인데,, 내일 araboza!
+(2차커밋)
+약간 더 진행해보았다.
+각 대륙별로 다른 대륙에 닿을때까지 bfs를 돌려준다.
+그리고 다른 대륙에 닿는 그 순간의 cost를 dist에 넣어준다.
+그리고 최종적으로는 sort를 한뒤 최소값이면서 중복되는 값들의 개수를 세어주면 아마도 답이될거같다.
+
+위의 내용을 바탕으로 내일 해보자!
 
 */
 
 #include <iostream>
 #include <queue>
+#include <list>
 
 #define MAX 100
 #define endl '\n'
@@ -26,21 +33,18 @@ using namespace std;
 int n;
 int dx[] = { 0, 0, -1, 1 }, dy[] = { -1, 1, 0, 0 }; // LRUD
 int graph[MAX][MAX], visited[MAX][MAX] = { false };
+list<int> dist;
 
 void input();
-void first_step();
+
+int first_step();
 void make_territory(int, int, int);
+void second_step();
 
 int main() {
 	input();
-	first_step();
 
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			cout << graph[i][j] << " ";
-		}
-		cout << endl;
-	}
+	int territory_count = first_step();
 
 	return 0;
 }
@@ -53,7 +57,7 @@ void input() {
 	}
 }
 
-void first_step() {
+int first_step() {
 	int number = 1;
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++) {
@@ -61,6 +65,7 @@ void first_step() {
 				make_territory(i, j, number++);
 		}
 	}
+	return number;
 }
 
 void make_territory(int x, int y, int number) {
@@ -85,4 +90,8 @@ void make_territory(int x, int y, int number) {
 			}
 		}
 	}
+}
+
+void second_step() {
+
 }
